@@ -1,4 +1,4 @@
-# 🕵️ CommandSpy
+# 🕵️ CommandSpy (Hytale Server)
 
 CommandSpy is a lightweight moderation utility for Hytale Server that allows administrators to monitor player commands in real time.
 
