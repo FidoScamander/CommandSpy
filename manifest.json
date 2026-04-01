@@ -1,0 +1,17 @@
+{
+  "Group": "com.oai.hytale",
+  "Name": "CommandSpy",
+  "Version": "1.5.1",
+  "Description": "Lightweight command spy for Hytale Server v4 with toggle, persistent state, configurable chat format and command logging.",
+  "Authors": [
+    {
+      "Name": "OpenAI"
+    }
+  ],
+  "Main": "com.oai.hytale.commandspy.CommandSpyPlugin",
+  "ServerVersion": "2026.03.26-89796e57b",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false
+}
