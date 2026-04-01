@@ -96,7 +96,8 @@ Example config.json:
   "spy-private-messages": true,
   "spy-console-commands": true,
   "spy-auth-commands": true
-}  ```
+}
+```
 
 
 ## 📦 Installation
