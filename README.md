@@ -1,9 +1,9 @@
-# 🕵️ CommandSpy (Hytale Server)
+# 🕵️ CommandSpy (Hytale Server) [![CurseForge](https://img.shields.io/badge/CurseForge-Download-orange)](https://www.curseforge.com/hytale/mods/commandspy)
 
 CommandSpy is a lightweight moderation utility for Hytale Server that allows administrators to monitor player commands in real time.
 
 Designed to be fast, lightweight, and fully configurable, CommandSpy helps staff monitor player activity without impacting server performance.
-[![CurseForge](https://img.shields.io/badge/CurseForge-Download-orange)](https://www.curseforge.com/hytale/mods/commandspy)
+
 
 
 ## ✨ Features
