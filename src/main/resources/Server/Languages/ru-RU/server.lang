@@ -1,0 +1,27 @@
+# CommandSpy 2.1.1 - Русский
+commandspy.chat.spy-format = &f[SPY] {player}: /{command}
+commandspy.chat.spy-enabled = &a[CommandSpy] Отслеживание команд включено.
+commandspy.chat.spy-disabled = &c[CommandSpy] Отслеживание команд выключено.
+commandspy.chat.filter-messages-enabled = &a[CommandSpy] Фильтр личных сообщений включён.
+commandspy.chat.filter-messages-disabled = &c[CommandSpy] Фильтр личных сообщений выключен.
+commandspy.chat.filter-commands-enabled = &a[CommandSpy] Фильтр команд включён.
+commandspy.chat.filter-commands-disabled = &c[CommandSpy] Фильтр команд выключен.
+commandspy.chat.filter-console-enabled = &a[CommandSpy] Фильтр консольных команд включён.
+commandspy.chat.filter-console-disabled = &c[CommandSpy] Фильтр консольных команд выключен.
+commandspy.chat.no-permission = &c[CommandSpy] У вас нет разрешения на использование этой функции.
+commandspy.chat.no-permission-messages = &c[CommandSpy] У вас нет разрешения на просмотр личных сообщений.
+commandspy.chat.no-permission-commands = &c[CommandSpy] У вас нет разрешения на просмотр команд.
+commandspy.chat.no-permission-console = &c[CommandSpy] У вас нет разрешения на просмотр консольных команд.
+commandspy.chat.reloaded = &a[CommandSpy] Конфигурация и сохранённые состояния перезагружены.
+commandspy.chat.gui-open-failed = &c[CommandSpy] Не удалось открыть панель управления.
+commandspy.chat.usage = &f[CommandSpy] Использование: /cmdspy [gui|messages|commands|console|reload]
+commandspy.ui.title = CommandSpy
+commandspy.ui.subtitle = Персональные настройки отслеживания
+commandspy.ui.general = Общее отслеживание
+commandspy.ui.messages = Личные сообщения
+commandspy.ui.commands = Команды игроков
+commandspy.ui.console = Консоль
+commandspy.ui.on = ВКЛ
+commandspy.ui.off = ВЫКЛ
+commandspy.ui.permission-hint = Фильтры без разрешения остаются видимыми, но их нельзя изменить.
+commandspy.ui.close-hint = Нажмите ESC, чтобы закрыть.

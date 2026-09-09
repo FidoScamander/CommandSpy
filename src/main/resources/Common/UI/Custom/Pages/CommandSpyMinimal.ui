@@ -1,0 +1,303 @@
+$C = "../Common.ui";
+
+@CommandSpyMinimalFrameBackground = PatchStyle(Color: #6a7889);
+@CommandSpyMinimalPanelBackground = PatchStyle(Color: #25303d);
+@CommandSpyMinimalHeaderBackground = PatchStyle(Color: #1a2330);
+@CommandSpyMinimalSectionBackground = PatchStyle(Color: #202a36);
+
+@CommandSpyMinimalTitleStyle = LabelStyle(
+  FontSize: 20,
+  Alignment: Center,
+  VerticalAlignment: Center,
+  FontName: "Secondary",
+  TextColor: #b4c8c9,
+  RenderUppercase: true,
+  RenderBold: true
+);
+
+@CommandSpyMinimalBodyStyle = LabelStyle(
+  FontSize: 14,
+  Alignment: Center,
+  VerticalAlignment: Center,
+  TextColor: #cfd6e0,
+  Wrap: true
+);
+
+@CommandSpyMinimalSectionTitleStyle = LabelStyle(
+  FontSize: 14,
+  Alignment: Center,
+  VerticalAlignment: Center,
+  TextColor: #d7dee7,
+  RenderUppercase: true,
+  RenderBold: true
+);
+
+@CommandSpyMinimalHintStyle = LabelStyle(
+  FontSize: 12,
+  Alignment: Center,
+  VerticalAlignment: Center,
+  TextColor: #8797ab,
+  RenderBold: true,
+  Wrap: true
+);
+
+Group #CommandSpyMinimalRoot {
+  Anchor: (Full: 0);
+  LayoutMode: Middle;
+
+  Group #CommandSpyMinimalFrame {
+    Anchor: (Width: 600, Height: 530);
+    LayoutMode: Full;
+    Padding: (Full: 2);
+    Background: @CommandSpyMinimalFrameBackground;
+
+    Group #CommandSpyMinimalPanel {
+      Anchor: (Full: 0);
+      LayoutMode: Top;
+      Padding: (Full: 14);
+      Background: @CommandSpyMinimalPanelBackground;
+
+      Group #CommandSpyMinimalHeader {
+        Anchor: (Height: 70, Bottom: 10);
+        LayoutMode: Top;
+        Padding: (Full: 8);
+        Background: @CommandSpyMinimalHeaderBackground;
+
+        Label #CommandSpyMinimalTitle {
+          Anchor: (Height: 32);
+          Style: @CommandSpyMinimalTitleStyle;
+          Text: "COMMANDSPY";
+        }
+
+        Label #CommandSpyMinimalSubtitle {
+          Anchor: (Height: 22);
+          Style: @CommandSpyMinimalBodyStyle;
+          Text: "PERSONAL MONITORING CONTROLS";
+        }
+      }
+
+      Group #CommandSpyMinimalGeneralSection {
+        Anchor: (Height: 68, Bottom: 7);
+        LayoutMode: Top;
+        Padding: (Full: 4);
+        Background: @CommandSpyMinimalSectionBackground;
+
+        Label #CommandSpyMinimalGeneralLabel {
+          Anchor: (Height: 20, Bottom: 4);
+          Style: @CommandSpyMinimalSectionTitleStyle;
+          Text: "GENERAL SPY";
+        }
+
+        Group #CommandSpyMinimalGeneralButtons {
+          Anchor: (Height: 34);
+          LayoutMode: Middle;
+
+          Group #CommandSpyMinimalGeneralButtonsCentered {
+            Anchor: (Width: 528, Height: 34);
+            LayoutMode: Left;
+
+            TextButton #CommandSpyMinimalGeneralOn {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalGeneralOnSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalGeneralOff {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalGeneralOffSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+          }
+        }
+      }
+
+      Group #CommandSpyMinimalPermissionSection {
+        Anchor: (Height: 58, Bottom: 7);
+        LayoutMode: Middle;
+        Padding: (Full: 8);
+        Background: @CommandSpyMinimalHeaderBackground;
+
+        Label #CommandSpyMinimalPermissionHint {
+          Anchor: (Width: 520, Height: 42);
+          Style: @CommandSpyMinimalHintStyle;
+          Text: "FILTERS WITHOUT PERMISSION REMAIN VISIBLE BUT CANNOT BE CHANGED";
+        }
+      }
+
+      Group #CommandSpyMinimalMessagesSection {
+        Anchor: (Height: 68, Bottom: 7);
+        LayoutMode: Top;
+        Padding: (Full: 4);
+        Background: @CommandSpyMinimalSectionBackground;
+
+        Label #CommandSpyMinimalMessagesLabel {
+          Anchor: (Height: 20, Bottom: 4);
+          Style: @CommandSpyMinimalSectionTitleStyle;
+          Text: "PRIVATE MESSAGES";
+        }
+
+        Group #CommandSpyMinimalMessagesButtons {
+          Anchor: (Height: 34);
+          LayoutMode: Middle;
+
+          Group #CommandSpyMinimalMessagesButtonsCentered {
+            Anchor: (Width: 528, Height: 34);
+            LayoutMode: Left;
+
+            TextButton #CommandSpyMinimalMessagesOn {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalMessagesOnSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalMessagesOff {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalMessagesOffSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+          }
+        }
+      }
+
+      Group #CommandSpyMinimalCommandsSection {
+        Anchor: (Height: 68, Bottom: 7);
+        LayoutMode: Top;
+        Padding: (Full: 4);
+        Background: @CommandSpyMinimalSectionBackground;
+
+        Label #CommandSpyMinimalCommandsLabel {
+          Anchor: (Height: 20, Bottom: 4);
+          Style: @CommandSpyMinimalSectionTitleStyle;
+          Text: "PLAYER COMMANDS";
+        }
+
+        Group #CommandSpyMinimalCommandsButtons {
+          Anchor: (Height: 34);
+          LayoutMode: Middle;
+
+          Group #CommandSpyMinimalCommandsButtonsCentered {
+            Anchor: (Width: 528, Height: 34);
+            LayoutMode: Left;
+
+            TextButton #CommandSpyMinimalCommandsOn {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalCommandsOnSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalCommandsOff {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalCommandsOffSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+          }
+        }
+      }
+
+      Group #CommandSpyMinimalConsoleSection {
+        Anchor: (Height: 68, Bottom: 7);
+        LayoutMode: Top;
+        Padding: (Full: 4);
+        Background: @CommandSpyMinimalSectionBackground;
+
+        Label #CommandSpyMinimalConsoleLabel {
+          Anchor: (Height: 20, Bottom: 4);
+          Style: @CommandSpyMinimalSectionTitleStyle;
+          Text: "CONSOLE";
+        }
+
+        Group #CommandSpyMinimalConsoleButtons {
+          Anchor: (Height: 34);
+          LayoutMode: Middle;
+
+          Group #CommandSpyMinimalConsoleButtonsCentered {
+            Anchor: (Width: 528, Height: 34);
+            LayoutMode: Left;
+
+            TextButton #CommandSpyMinimalConsoleOn {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalConsoleOnSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "ON";
+              Anchor: (Width: 260, Height: 34, Right: 8);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalConsoleOff {
+              Style: $C.@DefaultTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+
+            TextButton #CommandSpyMinimalConsoleOffSecondary {
+              Style: $C.@SecondaryTextButtonStyle;
+              Text: "OFF";
+              Anchor: (Width: 260, Height: 34);
+              Visible: false;
+            }
+          }
+        }
+      }
+
+      Label #CommandSpyMinimalCloseHint {
+        Anchor: (Height: 28);
+        Style: @CommandSpyMinimalHintStyle;
+        Text: "PRESS ESC TO CLOSE";
+      }
+    }
+  }
+}

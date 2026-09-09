@@ -1,0 +1,21 @@
+{
+  "Group": "Newt",
+  "Name": "CommandSpy",
+  "Version": "2.1.1",
+  "Description": "Permission-based command monitoring for Hytale server staff. Includes separate player-command, console and private-message permissions, persistent active-staff filters, independently configurable local audit logs with automatic retention, a compact control UI and bundled multilingual messages. Credential-bearing commands are excluded from monitoring and logs.",
+  "Authors": [
+    {
+      "Name": "Newt_Scamander",
+      "Url": "https://hytari.it"
+    }
+  ],
+  "Website": "https://hytari.it",
+  "ServerVersion": ">=0.6.0 <0.7.0",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "Main": "com.oai.hytale.commandspy.CommandSpyPlugin",
+  "SubPlugins": []
+}

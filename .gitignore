@@ -1,0 +1,15 @@
+# Gradle
+.gradle/
+build/
+
+# Local Hytale API used only for compilation
+libs/*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

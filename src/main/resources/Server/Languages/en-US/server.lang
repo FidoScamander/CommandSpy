@@ -1,0 +1,27 @@
+# CommandSpy 2.1.1 - English
+commandspy.chat.spy-format = &f[SPY] {player}: /{command}
+commandspy.chat.spy-enabled = &a[CommandSpy] Command spy enabled.
+commandspy.chat.spy-disabled = &c[CommandSpy] Command spy disabled.
+commandspy.chat.filter-messages-enabled = &a[CommandSpy] Private-message filter enabled.
+commandspy.chat.filter-messages-disabled = &c[CommandSpy] Private-message filter disabled.
+commandspy.chat.filter-commands-enabled = &a[CommandSpy] Command filter enabled.
+commandspy.chat.filter-commands-disabled = &c[CommandSpy] Command filter disabled.
+commandspy.chat.filter-console-enabled = &a[CommandSpy] Console-command filter enabled.
+commandspy.chat.filter-console-disabled = &c[CommandSpy] Console-command filter disabled.
+commandspy.chat.no-permission = &c[CommandSpy] You do not have permission to use this function.
+commandspy.chat.no-permission-messages = &c[CommandSpy] You do not have permission to monitor private messages.
+commandspy.chat.no-permission-commands = &c[CommandSpy] You do not have permission to monitor commands.
+commandspy.chat.no-permission-console = &c[CommandSpy] You do not have permission to monitor console commands.
+commandspy.chat.reloaded = &a[CommandSpy] Configuration and saved states reloaded.
+commandspy.chat.gui-open-failed = &c[CommandSpy] The control panel could not be opened.
+commandspy.chat.usage = &f[CommandSpy] Usage: /cmdspy [gui|messages|commands|console|reload]
+commandspy.ui.title = CommandSpy
+commandspy.ui.subtitle = Personal monitoring controls
+commandspy.ui.general = General spy
+commandspy.ui.messages = Private messages
+commandspy.ui.commands = Player commands
+commandspy.ui.console = Console
+commandspy.ui.on = ON
+commandspy.ui.off = OFF
+commandspy.ui.permission-hint = Filters without permission remain visible but cannot be changed.
+commandspy.ui.close-hint = Press ESC to close.

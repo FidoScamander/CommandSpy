@@ -1,0 +1,27 @@
+# CommandSpy 2.1.1 - Français
+commandspy.chat.spy-format = &f[SPY] {player} : /{command}
+commandspy.chat.spy-enabled = &a[CommandSpy] Surveillance des commandes activée.
+commandspy.chat.spy-disabled = &c[CommandSpy] Surveillance des commandes désactivée.
+commandspy.chat.filter-messages-enabled = &a[CommandSpy] Filtre des messages privés activé.
+commandspy.chat.filter-messages-disabled = &c[CommandSpy] Filtre des messages privés désactivé.
+commandspy.chat.filter-commands-enabled = &a[CommandSpy] Filtre des commandes activé.
+commandspy.chat.filter-commands-disabled = &c[CommandSpy] Filtre des commandes désactivé.
+commandspy.chat.filter-console-enabled = &a[CommandSpy] Filtre des commandes de console activé.
+commandspy.chat.filter-console-disabled = &c[CommandSpy] Filtre des commandes de console désactivé.
+commandspy.chat.no-permission = &c[CommandSpy] Vous n’avez pas la permission d’utiliser cette fonction.
+commandspy.chat.no-permission-messages = &c[CommandSpy] Vous n’avez pas la permission de surveiller les messages privés.
+commandspy.chat.no-permission-commands = &c[CommandSpy] Vous n’avez pas la permission de surveiller les commandes.
+commandspy.chat.no-permission-console = &c[CommandSpy] Vous n’avez pas la permission de surveiller les commandes de console.
+commandspy.chat.reloaded = &a[CommandSpy] Configuration et états enregistrés rechargés.
+commandspy.chat.gui-open-failed = &c[CommandSpy] Impossible d’ouvrir le panneau de contrôle.
+commandspy.chat.usage = &f[CommandSpy] Utilisation : /cmdspy [gui|messages|commands|console|reload]
+commandspy.ui.title = CommandSpy
+commandspy.ui.subtitle = Contrôles personnels de surveillance
+commandspy.ui.general = Surveillance générale
+commandspy.ui.messages = Messages privés
+commandspy.ui.commands = Commandes des joueurs
+commandspy.ui.console = Console
+commandspy.ui.on = ON
+commandspy.ui.off = OFF
+commandspy.ui.permission-hint = Les filtres non autorisés restent visibles mais ne peuvent pas être modifiés.
+commandspy.ui.close-hint = Appuyez sur ESC pour fermer.

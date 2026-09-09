@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.oai.hytale'
+version = '2.1.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly files('libs/HytaleServer.jar')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveBaseName = 'CommandSpy'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

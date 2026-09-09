@@ -1,0 +1,27 @@
+# CommandSpy 2.1.1 - Deutsch
+commandspy.chat.spy-format = &f[SPY] {player}: /{command}
+commandspy.chat.spy-enabled = &a[CommandSpy] Befehlsüberwachung aktiviert.
+commandspy.chat.spy-disabled = &c[CommandSpy] Befehlsüberwachung deaktiviert.
+commandspy.chat.filter-messages-enabled = &a[CommandSpy] Filter für private Nachrichten aktiviert.
+commandspy.chat.filter-messages-disabled = &c[CommandSpy] Filter für private Nachrichten deaktiviert.
+commandspy.chat.filter-commands-enabled = &a[CommandSpy] Befehlsfilter aktiviert.
+commandspy.chat.filter-commands-disabled = &c[CommandSpy] Befehlsfilter deaktiviert.
+commandspy.chat.filter-console-enabled = &a[CommandSpy] Filter für Konsolenbefehle aktiviert.
+commandspy.chat.filter-console-disabled = &c[CommandSpy] Filter für Konsolenbefehle deaktiviert.
+commandspy.chat.no-permission = &c[CommandSpy] Du hast keine Berechtigung für diese Funktion.
+commandspy.chat.no-permission-messages = &c[CommandSpy] Du hast keine Berechtigung, private Nachrichten zu überwachen.
+commandspy.chat.no-permission-commands = &c[CommandSpy] Du hast keine Berechtigung, Befehle zu überwachen.
+commandspy.chat.no-permission-console = &c[CommandSpy] Du hast keine Berechtigung, Konsolenbefehle zu überwachen.
+commandspy.chat.reloaded = &a[CommandSpy] Konfiguration und gespeicherte Zustände wurden neu geladen.
+commandspy.chat.gui-open-failed = &c[CommandSpy] Das Kontrollfenster konnte nicht geöffnet werden.
+commandspy.chat.usage = &f[CommandSpy] Verwendung: /cmdspy [gui|messages|commands|console|reload]
+commandspy.ui.title = CommandSpy
+commandspy.ui.subtitle = Persönliche Überwachungseinstellungen
+commandspy.ui.general = Allgemeine Überwachung
+commandspy.ui.messages = Private Nachrichten
+commandspy.ui.commands = Spielerbefehle
+commandspy.ui.console = Konsole
+commandspy.ui.on = AN
+commandspy.ui.off = AUS
+commandspy.ui.permission-hint = Filter ohne Berechtigung bleiben sichtbar, können aber nicht geändert werden.
+commandspy.ui.close-hint = Drücke ESC zum Schließen.

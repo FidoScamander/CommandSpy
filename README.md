@@ -1,124 +1,255 @@
-# 🕵️ CommandSpy (Hytale Server) [![CurseForge](https://img.shields.io/badge/CurseForge-Download-orange)](https://www.curseforge.com/hytale/mods/commandspy)
+# CommandSpy
 
-CommandSpy is a lightweight moderation utility for Hytale Server that allows administrators to monitor player commands in real time.
+CommandSpy is a staff-monitoring plugin for Hytale Server 0.6.x. It shows
+executed player commands, console commands and private-message commands in real
+time, with independent permissions and personal filters for every staff member.
+It can also maintain a local audit log with automatic time-based retention.
 
-Designed to be fast, lightweight, and fully configurable, CommandSpy helps staff monitor player activity without impacting server performance.
+## Features
 
+- Player-command monitoring
+- Console-command monitoring
+- Private-message monitoring
+- Independent permissions for every category
+- Master permission for full access
+- Personal general ON/OFF switch
+- Personal ON/OFF filter for each category
+- Persistent settings only for staff with CommandSpy currently enabled
+- Compact control panel opened with `/cmdspy gui`
+- Independent audit-log options for each category
+- Single persistent `commands.log` audit file
+- Automatic removal of audit entries older than the configured retention period
+- Default audit-log retention: 15 days
+- Bundled multilingual UI and chat messages
+- No external data transmission
+- Credential-bearing commands are excluded from live monitoring and audit logs
 
+## Installation
 
-## ✨ Features
+1. Stop the Hytale server.
+2. Copy `CommandSpy-2.1.1.jar` into the server `mods` folder.
+3. Start the server.
+4. Grant the required permissions to staff members.
 
-✔ Real-time command spy  
-✔ Toggle per-admin using /commandspy  
-✔ Permission based (command.spy)  
-✔ Persistent admin settings  
-✔ Configurable message format  
-✔ Command logging to file  
-✔ Default OFF for admins  
-✔ Configurable command filters  
-✔ Hytale Server v4 compatible  
+CommandSpy creates and uses:
 
+```text
+mods/CommandSpy/config.json
+mods/CommandSpy/spy-state.json
+mods/CommandSpy/console-state.json
+mods/CommandSpy/logs/commands.log
+```
 
-## 🔎 Command Filters
+Older timestamped CommandSpy audit logs are merged into `commands.log` when the
+new logging system is initialized, then the old per-session files are removed.
 
-CommandSpy supports filtering commands shown to administrators:
+## Permissions
 
-**Private messages**  
-/msg, /tell, /w, /whisper, /r, /reply, /mail send  
+### Full access
 
-**Console commands**
-
-**Authentication commands**  
-/login, /register  
-
-**Important:**  
-Filters only affect in-game visibility.  
-commands.log continues to record all commands.
-
-
-## 📜 Commands
-
-/commandspy  
-/cmdspy  
-
-Toggle command spy for the executing admin.
-
-
-## 🔐 Permission
-
+```text
 command.spy
+```
 
-Only users with this permission can use CommandSpy.
+Grants access to every monitoring category and to `/cmdspy reload`.
 
+### Private messages
 
-## 💬 Chat Format
+```text
+command.spy.messages
+```
 
-Default format:
+Allows the staff member to view private-message commands. Recognized commands
+include `/msg`, `/m`, `/message`, `/pm`, `/tell`, `/w`, `/whisper`, `/r`,
+`/reply` and `/mail send`.
 
-&a[SPY] &7%player%: %command%
+### Player commands
 
-Placeholders:
+```text
+command.spy.commands
+```
 
-%player%  
-%command%
+Allows the staff member to view commands executed by players. Private-message
+commands are classified separately and require `command.spy.messages`.
 
+### Console commands
 
-## 📁 Generated Files
+```text
+command.spy.console
+```
 
-CommandSpy creates:
+Allows the staff member to view commands executed by the server console.
 
-CommandSpy/  
-config.json  
-spy-state.json  
-commands.log  
+Permissions are additive. Example assignments:
 
+```text
+Moderator:        command.spy.commands
+Senior moderator: command.spy.commands + command.spy.messages
+Administrator:    command.spy.commands + command.spy.messages + command.spy.console
+Owner:            command.spy
+```
 
-## 📝 Command Logging
+## Commands
 
-All intercepted commands are saved to:
+```text
+/cmdspy
+/commandspy
+```
 
-CommandSpy/commands.log
+Enables or disables the personal general spy switch.
 
-Example:
+```text
+/cmdspy messages
+```
 
-[2026-03-30 11:47:20] Player: home house
+Toggles private-message monitoring.
 
+```text
+/cmdspy commands
+```
 
-## ⚙️ Configuration
+Toggles player-command monitoring.
 
-Example config.json:
+```text
+/cmdspy console
+```
 
-```json
+Toggles console-command monitoring.
+
+```text
+/cmdspy gui
+```
+
+Opens the control panel. Categories remain visible even without permission, but
+their buttons cannot be used.
+
+```text
+/cmdspy reload
+```
+
+Reloads the configuration and saved staff states. Requires `command.spy`.
+
+## Control panel
+
+The panel contains:
+
+```text
+GENERAL SPY
+
+Filters without permission remain visible but cannot be changed.
+
+PRIVATE MESSAGES
+PLAYER COMMANDS
+CONSOLE
+```
+
+The selected ON/OFF option uses the primary button style. The unselected option
+uses the secondary style. Changes made in the panel are saved immediately.
+
+## Personal settings
+
+CommandSpy persists state only for staff members whose general spy switch is
+currently enabled. Ordinary players and staff members with CommandSpy disabled
+are not kept in the saved state files.
+
+When the general spy switch is disabled, that UUID is removed from the saved
+CommandSpy state and from the saved console-filter state. Category defaults are
+restored for the next activation.
+
+## Configuration
+
+Default `config.json`:
+
+```jsonc
 {
-  "message-format": "&a[SPY] &7%player%: %command%",
-  "spy-enabled-message": "&a[SPY] &7Command spy enabled.",
-  "spy-disabled-message": "&c[SPY] &7Command spy disabled.",
+  // Automatically enable CommandSpy for authorized staff on first use/join
   "default-spy-enabled": false,
-  "spy-private-messages": true,
-  "spy-console-commands": true,
-  "spy-auth-commands": true
+
+  // Save regular commands executed by players
+  "log-player-commands": true,
+
+  // Save private-message commands under logs/commands.log
+  // (/msg, /tell, /w, /whisper, /r, /reply, /mail send)
+  "log-private-messages": true,
+
+  // Save commands executed by the console
+  "log-console-commands": true,
+
+  // Keep audit-log entries for this many days
+  "log-retention-days": 15
 }
 ```
 
+The logging options affect only the local audit file. They do not grant live
+monitoring permissions and do not change a staff member's personal filters.
+Each logging category can be enabled or disabled independently.
 
-## 📦 Installation
+`log-retention-days` is preserved when `/cmdspy reload` or a server restart
+rewrites the configuration. Invalid or non-positive values fall back to 15 days.
 
-1. Download CommandSpy.jar  
-2. Place it inside your server mods folder  
-3. Restart the server  
-4. Assign the permission `command.spy`  
+## Audit logs
 
----
+CommandSpy keeps one audit file:
 
-## ✅ Compatibility
+```text
+mods/CommandSpy/logs/commands.log
+```
 
-✔ Hytale Server v4  
-✔ Lightweight and production-ready  
+Audit entries contain a timestamp, the executor and the executed command. On
+startup and periodically while new entries are written, lines older than the
+configured retention period are removed automatically. The default retention is
+15 days.
 
----
+The subscriber queue is drained during shutdown so final console commands can be
+written before the plugin closes.
 
-## 💙 Inspiration
+## Command capture
 
-Inspired by command spy tools from the Minecraft server community, such as **CommandSpy**, **SocialSpy**, and similar moderation utilities.
+CommandSpy listens to executed-command records from Hytale's public logger
+subscription API. Records are classified as:
 
-After waiting for a similar tool for Hytale, I decided to create one myself — both out of necessity and as a tribute to the original concept.
+- private-message commands;
+- regular player commands;
+- console commands.
+
+Only records confirming command execution are processed. Duplicate delivery of
+the same log record is suppressed without blocking a command that is genuinely
+executed again later.
+
+## Credential protection
+
+Commands commonly used for login, registration, password changes, PINs, one-time
+codes and similar credentials are ignored before classification. Their arguments
+are not shown to staff and are not written to CommandSpy audit logs.
+
+## Languages and colors
+
+The JAR includes complete bundled translations for:
+
+- English
+- Italian
+- German
+- French
+- Spanish
+- Brazilian Portuguese
+- Russian
+
+Chat messages support `&0` through `&f`, `&r`, and hexadecimal colors such as
+`&#55FF55`. The bundled live-spy format is defined by:
+
+```text
+commandspy.chat.spy-format = &f[SPY] {player}: /{command}
+```
+
+## Privacy and file access
+
+CommandSpy does not send monitored data outside the server. Audit logs can
+contain command arguments and private conversations, so access to
+`mods/CommandSpy` should be restricted to trusted administrators.
+
+## Compatibility
+
+- Hytale Server: `>=0.6.0 <0.7.0`
+- Verified base functionality on Hytale Server 0.6.1
+- Java: 21
+- Required dependencies: none
